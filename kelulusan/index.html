@@ -135,86 +135,27 @@
 
     <section id="kelulusan" class="py-20 bg-gray-100 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md">Tahun Pelajaran 2025/2026</span>
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span id="academic-year-badge" class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md">Tahun Pelajaran 2025/2026</span>
                 <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Daftar Hasil Kelulusan Siswa</h2>
                 <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
                 <p class="mt-4 text-gray-600 text-sm">Menampilkan seluruh data profil kelulusan peserta didik SMP Islam Az-Zahro secara transparan dan terbuka.</p>
             </div>
 
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 max-w-4xl mx-auto bg-white/60 p-2 rounded-2xl border border-gray-200/50 backdrop-blur-sm">
+                <button onclick="switchYear('2023')" id="btn-year-2023" class="year-tab-btn flex-1 min-w-[200px] text-center px-4 py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200">
+                    TP 2023/2024
+                </button>
+                <button onclick="switchYear('2024')" id="btn-year-2024" class="year-tab-btn flex-1 min-w-[200px] text-center px-4 py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 bg-white text-gray-700 hover:bg-gray-50 border border-gray-200">
+                    TP 2024/2025
+                </button>
+                <button onclick="switchYear('2025')" id="btn-year-2025" class="year-tab-btn flex-1 min-w-[200px] text-center px-4 py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 bg-emerald-deep text-white shadow-md border border-transparent">
+                    TP 2025/2026 <span class="ml-1 text-[10px] bg-gold-accent text-emerald-deep px-1.5 py-0.5 rounded-full font-black animate-pulse">AKTIF</span>
+                </button>
+            </div>
+
             <div id="student-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
-        </div>
-    </section>
-
-    <section id="sambutan" class="py-20 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-8">
-                <span class="text-emerald-deep font-semibold text-sm uppercase tracking-wider bg-emerald-soft px-3 py-1 rounded-md inline-block">SELAMAT DATANG</span>
-                <h2 class="text-3xl md:text-4xl font-serif-custom font-bold text-gray-900 mt-2">Kata Sambutan Kepala Satuan Pendidikan</h2>
-                <div class="w-12 h-1 bg-gold-accent rounded-full mt-2 mx-auto"></div>
-                
-                <div class="flex justify-center gap-3 mt-6">
-                    <button onclick="switchKepsek('kepsek2')" id="btn-kepsek2" class="kepsek-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition-all bg-emerald-deep text-white shadow-md">
-                        Kepala Sekolah Saat Ini (2025 - Sekarang)
-                    </button>
-                    <button onclick="switchKepsek('kepsek1')" id="btn-kepsek1" class="kepsek-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition-all bg-gray-100 text-gray-700 hover:bg-gray-200">
-                        Kepala Sekolah Ke-1 (2023 - 2025)
-                    </button>
-                </div>
-            </div>
-
-            <div id="content-kepsek2" class="kepsek-content block transition-all duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-4 flex justify-center">
-                        <div class="relative group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-deep to-gold-accent rounded-3xl rotate-3 scale-105 opacity-10 group-hover:rotate-1 transition-all duration-300"></div>
-                            <div class="relative bg-white p-3 rounded-3xl shadow-xl border border-gray-100">
-                                <img src="https://smpi-azzahro.github.io/view/img/KS_SMP_Ke2.jpg" alt="Kepala Sekolah Baru" class="w-72 h-96 object-cover rounded-2xl">
-                                <div class="absolute bottom-6 left-6 right-6 bg-emerald-deep/90 backdrop-blur-sm text-white p-4 rounded-xl text-center border border-white/10">
-                                    <span class="block font-bold text-sm tracking-wide">RODI, S.Pd.</span>
-                                    <span class="block font-bold text-sm tracking-wide">Kepala Sekolah</span>
-                                    <span class="block text-xs text-gold-accent mt-0.5">TP 2025/2026 - Sekarang</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-8 space-y-4">
-                        <div class="text-gray-600 space-y-4 leading-relaxed text-sm md:text-base">
-                            <p class="font-medium text-gray-800 italic">"Bismillahirahmanirrahim. Assalamu’alaikum Warahmatullahi Wabarakatuh."</p>
-                            <p>Puji syukur kita panjatkan kehadirat Allah SWT atas limpahan rahmat dan karunia-Nya. Selamat datang di portal digital resmi <b>SMP Islam Az-Zahro</b>. Website ini hadir sebagai jembatan komunikasi, transparansi informasi, serta etalase dari berbagai aktivitas dan pencapaian pendidikan kami.</p>
-                            <p>Di era transformasi teknologi saat ini, kami berkomitmen untuk melahirkan lulusan yang tidak hanya cerdas secara kognitif, namun juga kokoh secara spiritual (Imtaq) serta adaptif terhadap perangkat digital. Melalui sistem pembelajaran modern yang terintegrasi, kami mendampingi setiap siswa untuk menemukan potensi terbaik mereka dalam lingkungan yang islami, disiplin, dan ramah anak.</p>
-                            <p>Terima kasih atas amanah dan kepercayaan yang diberikan oleh seluruh wali murid. Mari bersama-sama kita bersinergi demi mengantarkan generasi masa depan yang berakhlakul karimah menuju gerbang kesuksesan dunia dan akhirat.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="content-kepsek1" class="kepsek-content hidden transition-all duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-4 flex justify-center">
-                        <div class="relative group">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-deep to-gold-accent rounded-3xl rotate-3 scale-105 opacity-10 group-hover:rotate-1 transition-all duration-300"></div>
-                            <div class="relative bg-white p-3 rounded-3xl shadow-xl border border-gray-100">
-                                <img src="https://smpi-azzahro.github.io/view/img/KS_SMP_Ke1.jpg" alt="Kepala Sekolah Ke-1" class="w-72 h-96 object-cover rounded-2xl">
-                                <div class="absolute bottom-6 left-6 right-6 bg-emerald-medium/90 backdrop-blur-sm text-white p-4 rounded-xl text-center border border-white/10">
-                                    <span class="block font-bold text-sm tracking-wide">AHMAD DIYA' ULHAKKIH, S.Pd.I</span>
-                                    <span class="block font-bold text-sm tracking-wide">Kepala Sekolah Ke-1</span>
-                                    <span class="block text-xs text-gold-accent mt-0.5">TP 2023/2024 & 2024/2025</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-8 space-y-4">
-                        <div class="text-gray-600 space-y-4 leading-relaxed text-sm md:text-base">
-                            <p class="font-medium text-gray-800 italic">"Bismillahirahmanirrahim. Assalamu’alaikum Warahmatullahi Wabarakatuh."</p>
-                            <p>Segala puji bagi Allah yang telah memberikan kesempatan bagi kita semua untuk mengawali fondasi pendidikan di <b>SMP Islam Az-Zahro</b> sejak masa pendirian dan awal tahun pelajaran 2023/2024 hingga tahun pelajaran 2024/2025.</p>
-                            <p>Sebagai nahkoda pertama, fokus utama kami pada dua tahun pertama masa jabatan adalah membangun sistem kurikulum berkarakter, penanaman pembiasaan nilai keislaman dasar, serta meletakkan infrastruktur awal layanan digital terintegrasi demi kenyamanan belajar putra-putri kita.</p>
-                            <p>Dedikasi yang telah terukir selama periode awal tersebut akan senantiasa menjadi pijakan kokoh yang berkesinambungan demi kejayaan masa depan sekolah kita bersama. Terima kasih atas dukungan luar biasa dari seluruh pengurus yayasan, dewan guru, dan wali murid sekalian.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -628,27 +569,6 @@
         function prevSlide() { currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length; showSlide(currentSlideIndex); }
         setInterval(nextSlide, 6000);
 
-        // Tab Switcher Kepala Sekolah
-        function switchKepsek(kepsekName) {
-            const contents = document.querySelectorAll('.kepsek-content');
-            contents.forEach(content => { content.classList.add('hidden'); content.classList.remove('block'); });
-
-            const buttons = document.querySelectorAll('.kepsek-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-emerald-deep', 'text-white', 'shadow-md');
-                btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
-            });
-
-            const activeContent = document.getElementById(`content-${kepsekName}`);
-            if (activeContent) { activeContent.classList.remove('hidden'); activeContent.classList.add('block'); }
-
-            const activeBtn = document.getElementById(`btn-${kepsekName}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
-                activeBtn.className += ' bg-emerald-deep text-white shadow-md';
-            }
-        }
-
         // Tab Switcher Program
         function switchTab(tabName) {
             const contents = document.querySelectorAll('.tab-content');
@@ -688,13 +608,12 @@
             else { nav.classList.remove('py-1', 'shadow-lg'); nav.classList.add('py-3'); }
         });
 
-        // FUNGSI RENDER OTOMATIS DATA DARI FILE EKSTERNAL .JS
+        // FUNGSI RENDER OTOMATIS DATA DARI FILE EKSTERNAL .JS (TP 2025/2026)
         function renderStudents() {
             const container = document.getElementById('student-grid');
             if (!container) return;
             container.innerHTML = '';
 
-            // Memastikan data studentsData dari file JS eksternal telah termuat
             if (typeof studentsData === 'undefined' || !Array.isArray(studentsData)) {
                 container.innerHTML = '<div class="col-span-full text-center text-red-500 font-bold py-8">⚠️ Berkas basis data siswa gagal dimuat. Pastikan file .js berada di folder yang sama.</div>';
                 return;
@@ -726,6 +645,51 @@
                 container.insertAdjacentHTML('beforeend', cardHTML);
             });
             lucide.createIcons();
+        }
+
+        // Logika Switch Tab Tahun Pelajaran Kelulusan
+        function switchYear(year) {
+            const container = document.getElementById('student-grid');
+            const badge = document.getElementById('academic-year-badge');
+            if (!container) return;
+
+            const buttons = document.querySelectorAll('.year-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-deep', 'text-white', 'shadow-md', 'border-transparent');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-50', 'border-gray-200');
+                const activeBadge = btn.querySelector('span');
+                if (activeBadge) activeBadge.remove();
+            });
+
+            const activeBtn = document.getElementById(`btn-year-${year}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-50', 'border-gray-200');
+                activeBtn.classList.add('bg-emerald-deep', 'text-white', 'shadow-md', 'border-transparent');
+                activeBtn.insertAdjacentHTML('beforeend', ' <span class="ml-1 text-[10px] bg-gold-accent text-emerald-deep px-1.5 py-0.5 rounded-full font-black">AKTIF</span>');
+            }
+
+            if (year === '2025') {
+                badge.innerText = "Tahun Pelajaran 2025/2026";
+                badge.className = "text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md";
+                renderStudents();
+            } else {
+                let textTahun = year === '2023' ? '2023/2024' : '2024/2025';
+                badge.innerText = `Tahun Pelajaran ${textTahun}`;
+                badge.className = "text-gray-600 font-semibold text-sm tracking-wider uppercase bg-gray-200 px-3 py-1.5 rounded-md";
+                
+                container.innerHTML = `
+                    <div class="col-span-full flex flex-col items-center justify-center text-center py-16 px-4 bg-white rounded-3xl border border-gray-200/60 shadow-sm space-y-4">
+                        <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center text-gray-400">
+                            <i data-lucide="folder-open" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Berkas Basis Data Belum Tersedia</h3>
+                            <p class="text-sm text-gray-500 max-w-md mx-auto mt-1">Data kelulusan resmi untuk Tahun Pelajaran ${textTahun} belum diunggah ke server portal digital.</p>
+                        </div>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
         }
 
         window.addEventListener('DOMContentLoaded', renderStudents);
