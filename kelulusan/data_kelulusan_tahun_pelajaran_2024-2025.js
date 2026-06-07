@@ -1,11 +1,5 @@
 // Database Data Kelulusan Siswaa TP 2024/2025
 const LulusanKe2 = [
-  {"nama": "ADITYA EKA SAPUTRA", "tempat_lahir": "Bondowoso", "tanggal_lahir": "29 September 2010", "nis": "043", "nisn": "0109531186", "jk": "L", "orang_tua": "Bpk. Abdul Mahfud Anwar", "foto_profil_url": "https://i.ibb.co.com/hJG3RBrT/Adit.webp"},
-  {"nama": "AHMAD HABIBI MAULANA", "tempat_lahir": "Bondowoso", "tanggal_lahir": "28 April 2008", "nis": "044", "nisn": "0082114134", "jk": "L", "orang_tua": "Bpk. Asmuni", "foto_profil_url": "https://i.ibb.co.com/jkYGNmQJ/Habibi.webp"},
-  {"nama": "ANDHIKA BAGUS RAMADHAN", "tempat_lahir": "Bondowoso", "tanggal_lahir": "21 Agustus 2011", "nis": "045", "nisn": "3113634149", "jk": "L", "orang_tua": "Ibu. Jumliya", "foto_profil_url": "https://i.ibb.co.com/v6QVt7c0/Dika.webp"},
-  {"nama": "ARIN HISFUALAH", "tempat_lahir": "Bondowoso", "tanggal_lahir": "28 Mei 2012", "nis": "046", "nisn": "0127682320", "jk": "L", "orang_tua": "Bpk. Safi'i", "foto_profil_url": "https://i.ibb.co.com/jCyCfCS/Arin.webp"},
-  {"nama": "AVITA HELMIYATIN", "tempat_lahir": "Bondowoso", "tanggal_lahir": "19 Juni 2011", "nis": "047", "nisn": "0112483701", "jk": "P", "orang_tua": "Bpk. Diman Agus Sukardi", "foto_profil_url": "https://i.ibb.co.com/8nCkbQQw/Avita.webp"},
-  {"nama": "DANDI", "tempat_lahir": "Bondowoso", "tanggal_lahir": "01 Februari 2012", "nis": "048", "nisn": "0124159506", "jk": "L", "orang_tua": "Bpk. Asmun", "foto_profil_url": "https://i.ibb.co.com/Vp0wm0Py/Dandi.webp"},
   {"nama": "DEVITA MASURO", "tempat_lahir": "Bondowoso", "tanggal_lahir": "05 Desember 2010", "nis": "049", "nisn": "0104776302", "jk": "P", "orang_tua": "Bpk. Surahwi", "foto_profil_url": "https://i.ibb.co.com/zhNKmkJ1/Devi.webp"},
   {"nama": "DIMAS ARIF MAULANA", "tempat_lahir": "Bondowoso", "tanggal_lahir": "11 Desember 2010", "nis": "050", "nisn": "0107204403", "jk": "L", "orang_tua": "Bpk. Ahdul Salim", "foto_profil_url": "https://i.ibb.co.com/gLbDfYtV/Alan.webp"},
   {"nama": "FANIA RAHMAWATI", "tempat_lahir": "Bondowoso", "tanggal_lahir": "02 Juli 2010", "nis": "051", "nisn": "0102655649", "jk": "P", "orang_tua": "Ibu. Mina", "foto_profil_url": "https://i.ibb.co.com/7tmcpcXL/Fania.webp"},
