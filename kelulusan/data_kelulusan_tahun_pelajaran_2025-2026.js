@@ -1,5 +1,5 @@
 // Database Data Kelulusan Siswa TP 2025/2026
-const studentsData = [
+const LulusanKe3 = [
   {"nama": "ADITYA EKA SAPUTRA", "tempat_lahir": "Bondowoso", "tanggal_lahir": "29 September 2010", "nis": "043", "nisn": "0109531186", "jk": "L", "orang_tua": "Bpk. Abdul Mahfud Anwar", "foto_profil_url": "https://i.ibb.co.com/hJG3RBrT/Adit.webp"},
   {"nama": "AHMAD HABIBI MAULANA", "tempat_lahir": "Bondowoso", "tanggal_lahir": "28 April 2008", "nis": "044", "nisn": "0082114134", "jk": "L", "orang_tua": "Bpk. Asmuni", "foto_profil_url": "https://i.ibb.co.com/jkYGNmQJ/Habibi.webp"},
   {"nama": "ANDHIKA BAGUS RAMADHAN", "tempat_lahir": "Bondowoso", "tanggal_lahir": "21 Agustus 2011", "nis": "045", "nisn": "3113634149", "jk": "L", "orang_tua": "Ibu. Jumliya", "foto_profil_url": "https://i.ibb.co.com/v6QVt7c0/Dika.webp"},
