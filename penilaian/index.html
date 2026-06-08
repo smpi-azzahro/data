@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Input Nilai Semester 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 60px;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        .table thead th {
+            vertical-align: middle;
+            text-align: center;
+            background-color: #343a40;
+            color: white;
+        }
+        .input-nilai {
+            width: 80px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .kkm-badge {
+            font-size: 0.85em;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loading-overlay.d-none {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loadingOverlay" class="loading-overlay d-none">
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+            <div class="mt-2 fw-bold text-secondary">Memproses data ke Google Sheets...</div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">📊 INPUT NILAI SEMESTER 2</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card p-4 bg-white">
+            <h5 class="card-title mb-3 fw-bold text-secondary">Pilih Kelas & Mata Pelajaran</h5>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Pilih Kelas</label>
+                    <select id="selectKelas" class="form-select">
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="KELAS 7">Kelas 7</option>
+                        <option value="KELAS 8">Kelas 8</option>
+                        <option value="KELAS 9">Kelas 9</option>
+                        <option value="KELAS 10">Kelas 10</option>
+                        <option value="KELAS 11">Kelas 11</option>
+                        <option value="KELAS 12">Kelas 12</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label fw-semibold">Pilih Mata Pelajaran / Program</label>
+                    <select id="selectMapel" class="form-select">
+                        <option value="">-- Pilih Mapel --</option>
+                        <optgroup label="KELOMPOK A (WAJIB)">
+                            <option value="PA_BP">PA dan BP</option>
+                            <option value="PPKN">PPKn</option>
+                            <option value="B_INDO">B. Indonesia</option>
+                            <option value="MATEMATIKA">Matematika</option>
+                            <option value="IPS">IPS</option>
+                            <option value="B_INGGRIS">B. Inggris</option>
+                        </optgroup>
+                        <optgroup label="KELOMPOK B (WAJIB)">
+                            <option value="SENI_BUD">Seni Budaya</option>
+                            <option value="PENJAS">Penjas</option>
+                            <option value="IPA">IPA</option>
+                        </optgroup>
+                        <optgroup label="KELOMPOK C & PROGRAM">
+                            <option value="TIK">TIK</option>
+                            <option value="BTQ">BTQ</option>
+                            <option value="PRAKARYA">Prakarya</option>
+                            <option value="B_MADURA">B. Madura</option>
+                            <option value="TAHFIDZ">Program Tahfidz</option>
+                        </optgroup>
+                        <optgroup label="REKAP KEHADIRAN">
+                            <option value="KEHADIRAN">Alpha, Sakit, Izin</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button id="btnMuat" class="btn btn-primary w-100 fw-bold py-2">🔄 Muat Daftar Siswa</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="alertBox" class="alert d-none mt-3" role="alert"></div>
+
+        <div id="containerTabel" class="table-container d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                <div>
+                    <h4 id="judulTabel" class="fw-bold text-dark m-0">Daftar Siswa</h4>
+                    <div id="infoKkm" class="kkm-badge"></div>
+                </div>
+                <button id="btnSimpanAtas" class="btn btn-success fw-bold px-4 py-2 mt-2 mt-md-0">💾 Simpan Semua Nilai</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead id="headTabel">
+                        </thead>
+                    <tbody id="bodyTabel">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-end mt-3">
+                <button id="btnSimpanBawah" class="btn btn-success fw-bold px-4 py-2">💾 Simpan Semua Nilai</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ====================================================================
+        // GANTI URL DI BAWAH INI DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA
+        // ====================================================================
+        const CONFIG_GAS_URL = "https://script.google.com/macros/s/AKfycbz3vYiQLbsJFsT1JPyY7pcc2b0GZp2CPoefoYOmthQ0rr5j3sjFQsg50CDxlAyapz3j/exec";
+
+        // Pemetaan Mapel ke Nomor Indeks Kolom di Google Sheets Anda
+        const MAPEL_MAPPING = {
+            "PA_BP":       { nama: "PA dan BP",        kkm: 75, p: 4,  k: 5 },  // Kolom D & E
+            "PPKN":        { nama: "PPKn",             kkm: 70, p: 6,  k: 7 },  // Kolom F & G
+            "B_INDO":      { nama: "B. INDONESIA",     kkm: 72, p: 8,  k: 9 },  // Kolom H & I
+            "MATEMATIKA":  { nama: "MATEMATIKA",       kkm: 70, p: 10, k: 11 }, // Kolom J & K
+            "IPS":         { nama: "IPS",              kkm: 72, p: 12, k: 13 }, // Kolom L & M
+            "B_INGGRIS":   { nama: "B. INGGRIS",       kkm: 60, p: 14, k: 15 }, // Kolom N & O
+            "SENI_BUD":    { nama: "SENI BUDAYA",      kkm: 69, p: 16, k: 17 }, // Kolom P & Q
+            "PENJAS":      { nama: "PENJAS",           kkm: 75, p: 18, k: 19 }, // Kolom R & S
+            "IPA":         { nama: "IPA",              kkm: 70, p: 20, k: 21 }, // Kolom T & U
+            "TIK":         { nama: "TIK",              kkm: 70, p: 22, k: 23 }, // Kolom V & W
+            "BTQ":         { nama: "BTQ",              kkm: 70, p: 24, k: 25 }, // Kolom X & Y
+            "PRAKARYA":    { nama: "PRAKARYA",         kkm: 70, p: 26, k: 27 }, // Kolom Z & AA
+            "B_MADURA":    { nama: "B. MADURA",        kkm: 70, p: 28, k: 29 }, // Kolom AB & AC
+            "TAHFIDZ":     { nama: "PROGRAM TAHFIDZ",  kkm: 68, p: 30, k: 31 }, // Kolom AD & AE
+            "KEHADIRAN":   { nama: "Tingkat Kehadiran", kkm: null, alpha: 34, sakit: 35 } // Kolom AH (34) & AI (35)
+        };
+
+        const selectKelas = document.getElementById('selectKelas');
+        const selectMapel = document.getElementById('selectMapel');
+        const btnMuat = document.getElementById('btnMuat');
+        const containerTabel = document.getElementById('containerTabel');
+        const judulTabel = document.getElementById('judulTabel');
+        const infoKkm = document.getElementById('infoKkm');
+        const headTabel = document.getElementById('headTabel');
+        const bodyTabel = document.getElementById('bodyTabel');
+        const btnSimpanAtas = document.getElementById('btnSimpanAtas');
+        const btnSimpanBawah = document.getElementById('btnSimpanBawah');
+        const alertBox = document.getElementById('alertBox');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        let dataSiswaAktif = []; 
+
+        // Event handler Ambil Data Siswa
+        btnMuat.addEventListener('click', async () => {
+            const kelas = selectKelas.value;
+            const mapelKey = selectMapel.value;
+
+            if (!kelas || !mapelKey) {
+                showAlert('danger', '⚠️ Silakan pilih Kelas dan Mata Pelajaran terlebih dahulu!');
+                return;
+            }
+
+            showAlert('info', '⌛ Memuat data siswa...');
+            containerTabel.classList.add('d-none');
+            
+            const mapelInfo = MAPEL_MAPPING[mapelKey];
+            let colPParam = mapelInfo.p || mapelInfo.alpha || "";
+            let colKParam = mapelInfo.k || mapelInfo.sakit || "";
+            
+            try {
+                const urlFetch = `${CONFIG_GAS_URL}?kelas=${encodeURIComponent(kelas)}&colP=${colPParam}&colK=${colKParam}`;
+                const response = await fetch(urlFetch);
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    dataSiswaAktif = result.data;
+                    if (dataSiswaAktif.length === 0) {
+                        showAlert('warning', `⚠️ Tidak ada data siswa ditemukan di tab ${kelas} (Baris 11+ kosong).`);
+                        return;
+                    }
+                    
+                    renderTabel(mapelKey, mapelInfo);
+                    showAlert('success', `✅ Berhasil memuat ${dataSiswaAktif.length} siswa.`);
+                } else {
+                    showAlert('danger', `❌ Gagal: ${result.message}`);
+                }
+            } catch (error) {
+                console.error(error);
+                showAlert('danger', '❌ Terjadi kesalahan jaringan saat mengambil data. Pastikan URL GAS benar dan sudah dideploy dengan akses "Anyone".');
+            }
+        });
+
+        // Membuat Tampilan Tabel Dinamis
+        function renderTabel(mapelKey, mapelInfo) {
+            judulTabel.innerText = `Input Nilai: ${mapelInfo.nama}`;
+            if (mapelInfo.kkm) {
+                infoKkm.style.display = 'inline-block';
+                infoKkm.innerText = `🎯 KKM: ${mapelInfo.kkm}`;
+            } else {
+                infoKkm.style.display = 'none';
+            }
+
+            if (mapelKey === "KEHADIRAN") {
+                headTabel.innerHTML = `
+                    <tr>
+                        <th style="width: 7%">No</th>
+                        <th style="width: 15%">NIS</th>
+                        <th>Nama Siswa</th>
+                        <th style="width: 15%">Alpha (α)</th>
+                        <th style="width: 15%">Sakit (S)</th>
+                    </tr>
+                `;
+            } else {
+                headTabel.innerHTML = `
+                    <tr>
+                        <th style="width: 7%">No</th>
+                        <th style="width: 15%">NIS</th>
+                        <th>Nama Siswa</th>
+                        <th style="width: 15%">Pengetahuan</th>
+                        <th style="width: 15%">Keterampilan</th>
+                    </tr>
+                `;
+            }
+
+            bodyTabel.innerHTML = "";
+            dataSiswaAktif.forEach((siswa) => {
+                const tr = document.createElement('tr');
+                const valP = siswa.valP !== undefined && siswa.valP !== null ? siswa.valP : "";
+                const valK = siswa.valK !== undefined && siswa.valK !== null ? siswa.valK : "";
+
+                tr.innerHTML = `
+                    <td class="text-center fw-bold">${siswa.no || '-'}</td>
+                    <td class="text-center text-secondary">${siswa.nis || '-'}</td>
+                    <td class="fw-semibold px-3">${siswa.nama}</td>
+                    <td>
+                        <input type="number" class="form-control input-nilai input-p" 
+                               data-row="${siswa.row}" value="${valP}" min="0" max="100">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control input-nilai input-k" 
+                               data-row="${siswa.row}" value="${valK}" min="0" max="100">
+                    </td>
+                `;
+                bodyTabel.appendChild(tr);
+            });
+
+            containerTabel.classList.remove('d-none');
+        }
+
+        // Handler Simpan Data ke Google Sheets
+        btnSimpanAtas.addEventListener('click', simpanSemuaNilai);
+        btnSimpanBawah.addEventListener('click', simpanSemuaNilai);
+
+        async function simpanSemuaNilai() {
+            const kelas = selectKelas.value;
+            const mapelKey = selectMapel.value;
+            const mapelInfo = MAPEL_MAPPING[mapelKey];
+
+            if (!kelas || !mapelKey) return;
+
+            const inputsP = document.querySelectorAll('.input-p');
+            const inputsK = document.querySelectorAll('.input-k');
+            const scoresPayload = [];
+            
+            for (let i = 0; i < inputsP.length; i++) {
+                const row = inputsP[i].getAttribute('data-row');
+                const pValue = inputsP[i].value.trim();
+                const kValue = inputsK[i].value.trim();
+
+                scoresPayload.push({
+                    row: row,
+                    p: pValue === "" ? "" : Number(pValue),
+                    k: kValue === "" ? "" : Number(kValue)
+                });
+            }
+
+            const payload = {
+                kelas: kelas,
+                colP: mapelInfo.p || mapelInfo.alpha,
+                colK: mapelInfo.k || mapelInfo.sakit,
+                scores: scoresPayload
+            };
+
+            loadingOverlay.classList.remove('d-none');
+            showAlert('info', '💾 Sedang mengunggah data ke Google Sheets...');
+
+            try {
+                const response = await fetch(CONFIG_GAS_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                loadingOverlay.classList.add('d-none');
+
+                if (result.status === "success") {
+                    showAlert('success', `🎉 Sukses! Data ${mapelInfo.nama} untuk ${kelas} telah tersimpan di Google Sheets.`);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    showAlert('danger', `❌ Gagal menyimpan: ${result.message}`);
+                }
+
+            } catch (error) {
+                loadingOverlay.classList.add('d-none');
+                console.error(error);
+                showAlert('danger', '❌ Kesalahan jaringan. Pastikan URL Web App GAS Anda valid.');
+            }
+        }
+
+        function showAlert(type, message) {
+            alertBox.className = `alert alert-${type} mt-3`;
+            alertBox.innerHTML = message;
+            alertBox.classList.remove('d-none');
+        }
+    </script>
+</body>
+</html>
