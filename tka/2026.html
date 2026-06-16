@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Hasil TKA - SMP Islam Az-Zahro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            deep: '#0F5132',
+                            medium: '#146c43',
+                            light: '#d1e7dd',
+                            soft: '#f0fdf4'
+                        },
+                        gold: {
+                            accent: '#D4AF37',
+                            muted: '#c5a059',
+                            light: '#fbf7eb'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif-custom {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-nav {
+            background-color: rgba(15, 81, 50, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-emerald-deep selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-emerald-medium/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <img src="https://azzahrolocare.github.io/presensi-smp-smk-azzahro/logo-smp-azzahro.png" alt="Logo SMP Islam Az-Zahro" class="w-12 h-12 object-contain drop-shadow-md">
+                    <div>
+                        <span class="block text-white font-serif-custom text-lg font-bold tracking-wide">SMP ISLAM AZ-ZAHRO</span>
+                        <span class="block text-gold-accent text-xs tracking-widest uppercase font-semibold">NPSN: 70024271</span>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="#beranda" class="text-emerald-light hover:text-gold-accent font-medium transition-colors duration-200">Beranda</a>
+                    <a href="#tka" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200 flex items-center gap-1"><i data-lucide="award" class="w-4 h-4"></i> Hasil TKA 2026</a>
+                    <a href="#legalitas" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Profil</a>
+                    <a href="#visimisi" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Visi & Misi</a>
+                    <a href="#pilar" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Program</a>
+                    <a href="#layanan" class="text-white/80 hover:text-gold-accent font-medium transition-colors duration-200">Layanan Digital</a>
+                    <a href="#kontak" class="bg-gold-accent text-emerald-deep px-4 py-2 rounded-lg font-bold hover:bg-white hover:text-emerald-deep transition-all duration-300 shadow-md text-sm">Hubungi Kami</a>
+                </div>
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-accent focus:outline-none p-2" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-emerald-deep border-t border-emerald-medium/40 transition-all duration-300">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                <a href="#beranda" class="block text-white py-2.5 px-4 hover:bg-emerald-medium rounded-lg">Beranda</a>
+                <a href="#tka" class="block text-gold-accent py-2.5 px-4 hover:bg-emerald-medium rounded-lg font-bold">Hasil TKA 2026</a>
+                <a href="#legalitas" class="block text-white py-2.5 px-4 hover:bg-emerald-medium rounded-lg">Profil & Legalitas</a>
+                <a href="#visimisi" class="block text-white py-2.5 px-4 hover:bg-emerald-medium rounded-lg">Visi & Misi</a>
+                <a href="#pilar" class="block text-white py-2.5 px-4 hover:bg-emerald-medium rounded-lg">Pilar Unggulan</a>
+                <a href="#layanan" class="block text-white py-2.5 px-4 hover:bg-emerald-medium rounded-lg">Layanan Digital</a>
+                <a href="#kontak" class="block bg-gold-accent text-emerald-deep mx-4 py-2.5 rounded-lg font-bold shadow-md">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="beranda" class="relative pt-24 overflow-hidden bg-emerald-deep">
+        <div class="relative h-[500px] md:h-[650px] w-full overflow-hidden">
+            <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out z-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-deep via-emerald-deep/80 to-transparent z-20"></div>
+                <img src="https://smpi-azzahro.github.io/view/img/Header_Foto_Bersama_Kelembagaan_Az-Zahro_compress.jpg?auto=format&fit=crop&w=1920&q=80" alt="Guru Az-Zahro" class="w-full h-full object-cover">
+            </div>
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-10">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-deep via-emerald-deep/80 to-transparent z-20"></div>
+                <img src="https://smpi-azzahro.github.io/view/img/pelaksanaan-tka-2026.jpeg" alt="Kegiatan Academic" class="w-full h-full object-cover">
+            </div>
+
+            <div class="absolute inset-0 z-30 flex items-center">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-8 text-left space-y-6">
+                        <div class="inline-flex items-center space-x-2 bg-emerald-medium/60 border border-gold-accent/40 px-4 py-2 rounded-full shadow-lg">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gold-accent animate-ping"></span>
+                            <span class="text-gold-accent text-xs font-bold tracking-wider uppercase">PORTAL PENGUMUMAN RESMI</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif-custom text-white font-bold leading-tight">
+                            Membentuk Generasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-accent to-yellow-200">Rabbani</span> Unggul & Berteknologi
+                        </h1>
+                        <p class="text-emerald-light text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                            Selamat Datang di <strong class="text-white font-semibold">SMP Islam Az-Zahro</strong>. Berikut di bawah ini merupakan rincian portofolio resmi hasil Tes Kemampuan Akademik (TKA) Tahun 2026.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a href="#tka" class="px-6 py-3.5 bg-gold-accent hover:bg-yellow-400 text-emerald-deep font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-xl flex items-center gap-2 text-sm">
+                                <i data-lucide="award" class="w-4 h-4"></i> Lihat Hasil TKA Siswa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-8 right-8 z-30 flex space-x-2">
+                <button onclick="prevSlide()" class="p-2.5 rounded-full bg-black/30 hover:bg-gold-accent text-white hover:text-emerald-deep transition-all backdrop-blur-sm">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </button>
+                <button onclick="nextSlide()" class="p-2.5 rounded-full bg-black/30 hover:bg-gold-accent text-white hover:text-emerald-deep transition-all backdrop-blur-sm">
+                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="tka" class="py-20 bg-gray-100 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span id="academic-year-badge" class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md">TES KEMAMPUAN AKADEMIK TAHUN 2026</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Daftar Hasil Ujian Kolektif Siswa</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-600 text-sm">Menampilkan hasil pencapaian pemetaan Tes Kemampuan Akademik SMP Islam Az-Zahro (NPSN: 70024271) secara terbuka, dinamis, dan transparan.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8 bg-white p-4 rounded-2xl border border-gray-200 shadow-sm max-w-5xl mx-auto">
+                <div class="flex items-center gap-2 text-gray-700 font-medium text-sm">
+                    <i data-lucide="sliders-horizontal" class="w-4 h-4 text-emerald-deep"></i>
+                    <span>Opsi Filter & Pengurutan Nilai:</span>
+                </div>
+                <div class="w-full md:w-72">
+                    <select id="sortOption" onchange="urutkanDataTka()" class="w-full bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-xl focus:ring-emerald-deep focus:border-emerald-deep p-2.5 outline-none font-semibold transition-all">
+                        <option value="keseluruhan">Secara Keseluruhan (Total)</option>
+                        <option value="matematika">Matematika Tertinggi</option>
+                        <option value="bahasa">Bahasa Indonesia Tertinggi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="student-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                </div>
+
+            <div class="mt-12 max-w-5xl mx-auto bg-emerald-soft/50 p-6 rounded-2xl border border-emerald-light/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-xs text-gray-500">
+                <div>
+                    <p class="font-semibold flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-deep"></i> Sumber Sistem Utama: https://tka.kemendikdasmen.go.id</p>
+                    <p class="mt-1">Waktu Sinkronisasi: Selasa, 09 Juni 2026 | Operator: P05311017</p>
+                </div>
+                <div class="text-left sm:text-right">
+                    <p class="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Mengesahkan Kepala Sekolah,</p>
+                    <p class="text-base font-serif-custom font-bold text-gray-900 mt-1">Rodi, S.Pd.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="legalitas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/50 px-3 py-1.5 rounded-md">Transparansi Data</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Identitas Resmi Satuan Pendidikan</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                        <div class="p-3 rounded-xl bg-emerald-soft text-emerald-deep">
+                            <i data-lucide="info" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Nama Lembaga</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-0.5">SMP Islam Az-Zahro</h3>
+                            <p class="text-sm text-gray-500">Desa Locare Krajan RT 02/RW 01, Dusun Krajan, Kecamatan Curahdami, Kabupaten Bondowoso, Jawa Timur.</p>
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-light/60 text-emerald-deep text-xs font-bold rounded-full h-fit">Swasta</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 block">NPSN</span>
+                            <span class="text-2xl font-mono font-bold text-emerald-deep block mt-1">70024271</span>
+                            <span class="text-xs text-gray-500 mt-2 block flex items-center gap-1">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-medium"></i> Terverifikasi Kemendikbud
+                            </span>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 block">Kepemilikan</span>
+                            <span class="text-2xl font-bold text-gray-900 block mt-1">Yayasan</span>
+                            <span class="text-xs text-gray-500 mt-2 block flex items-center gap-1">
+                                <i data-lucide="shield" class="w-4 h-4 text-gold-muted"></i> Az-Zahro Islamic Foundation
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                        <h4 class="text-md font-bold text-gray-800 border-b pb-3 flex items-center gap-2">
+                            <i data-lucide="award" class="text-gold-accent w-5 h-5"></i> Ketetapan & Legalitas Operasional
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-deep bg-emerald-soft px-2.5 py-1 rounded">SK Pendirian Sekolah</span>
+                                <p class="text-sm font-semibold text-gray-800 break-words pt-1">421.3/1343/430.9.9/2023</p>
+                                <div class="flex items-center gap-1.5 text-xs text-gray-500 pt-1">
+                                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                                    <span>18 Desember 2023</span>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-gold-muted bg-gold-light px-2.5 py-1 rounded">SK Izin Operasional</span>
+                                <p class="text-sm font-semibold text-gray-800 break-words pt-1">503.421/649/PENDIK/430.9.13/2023</p>
+                                <div class="flex items-center gap-1.5 text-xs text-gray-500 pt-1">
+                                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                                    <span>21 Desember 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-gradient-to-br from-emerald-deep to-emerald-medium p-8 rounded-3xl text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-xl bg-gold-accent flex items-center justify-center text-emerald-deep mb-6 shadow-md">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif-custom font-bold text-white mb-4">Lembaga Terakreditasi Hukum</h3>
+                        <p class="text-emerald-light text-sm leading-relaxed mb-6">
+                            Seluruh berkas operasional sekolah kami telah tervalidasi oleh Dinas Pendidikan, memastikan keabsahan penuh proses data Dapodik, sistem evaluasi mandiri, serta dokumentasi akademik.
+                        </p>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center gap-3 text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span> Kurikulum Nasional Berbasis Akhlak
+                            </li>
+                            <li class="flex items-center gap-3 text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span> Sinkronisasi Sistem Dapodik Aktif
+                            </li>
+                            <li class="flex items-center gap-3 text-emerald-soft">
+                                <span class="w-5 h-5 rounded-full bg-emerald-medium flex items-center justify-center text-gold-accent text-xs">✔</span> Hak Penyelenggaraan Ujian Mandiri
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visimisi" class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-accent font-semibold text-sm tracking-wider uppercase bg-gold-light px-3 py-1.5 rounded-md">Pilar Penuntun</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Visi & Misi Lembaga</h2>
+                <div class="w-16 h-1 bg-emerald-deep mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-emerald-deep to-emerald-medium p-8 md:p-12 rounded-3xl text-center shadow-xl mb-12">
+                <h3 class="text-gold-accent font-bold text-xs uppercase tracking-widest mb-3">Visi Utama Kami</h3>
+                <blockquote class="text-lg md:text-2xl font-serif-custom italic text-white font-medium leading-relaxed">
+                    "Menjadi lembaga pendidikan Islam yang unggul dalam mencetak generasi penerus bangsa yang beriman, berilmu, dan berakhlakul karimah, serta siap menghadapi tantangan zaman."
+                </blockquote>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-md font-bold text-gray-900 mb-2">Peningkatan Imtaq</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Menjadikan nilai-nilai Al-Qur'an dan Sunnah sebagai fondasi dasar pembentukan kepribadian peserta didik sehari-hari.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-md font-bold text-gray-900 mb-2">Pengembangan Potensi Akademik</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Melaksanakan proses pembelajaran aktif dan inovatif berbasis IT guna menggali bakat dan minat secara optimal.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-deep text-white flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="smile" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-md font-bold text-gray-900 mb-2">Pendidikan Karakter & Adab</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Membangun akhlak mulia, rasa hormat, tata krama, serta kedisiplinan yang luhur di dalam maupun luar sekolah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pilar" class="py-20 bg-emerald-soft/40 border-t border-b border-emerald-light/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light/60 px-3 py-1.5 rounded-md">Implementasi Program</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Program Pembiasaan Utama</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button onclick="switchTab('imtaq')" id="btn-imtaq" class="tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-emerald-deep text-white shadow-md">Keislaman (IMTAQ)</button>
+                <button onclick="switchTab('akademik')" id="btn-akademik" class="tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-white text-gray-700 hover:bg-gray-100">Akademik & IT</button>
+                <button onclick="switchTab('karakter')" id="btn-karakter" class="tab-btn px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all bg-white text-gray-700 hover:bg-gray-100">Adab & Kedisiplinan</button>
+            </div>
+
+            <div class="bg-white p-6 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                <div id="content-imtaq" class="tab-content block">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-xl font-serif-custom font-bold text-emerald-deep">Fondasi Spiritual Sejak Dini</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Pembiasaan ibadah dilakukan terstruktur untuk membangun kecintaan mendalam siswa terhadap syariat Islam.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                                <div class="flex items-start gap-2.5 text-sm">
+                                    <i data-lucide="check-square" class="text-gold-accent w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                    <div><strong>Tahfidz Intensif:</strong> Target kelulusan hafal 2 Juz teruji tajwidnya.</div>
+                                </div>
+                                <div class="flex items-start gap-2.5 text-sm">
+                                    <i data-lucide="check-square" class="text-gold-accent w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                    <div><strong>Ibadah Berjamaah:</strong> Shalat Dhuha rutin dan Dzuhur berjamaah di sekolah.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-emerald-soft p-6 rounded-2xl text-center border border-emerald-light/50">
+                            <span class="text-xs font-bold text-emerald-deep uppercase tracking-wider block">Target Kelulusan Utama</span>
+                            <div class="text-4xl font-extrabold text-emerald-deep font-serif-custom my-3">Mampu Menghafal Al-Qur'an</div>
+                            <p class="text-xs text-gray-500">Disertai pemahaman dasar ilmu hukum tajwid & adab akhlak harian.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-akademik" class="tab-content hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-xl font-serif-custom font-bold text-emerald-deep">Pembelajaran Modern Adaptif</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Kurikulum nasional dipadukan dengan kesiapan adaptasi perangkat lunak teknologi informasi masa kini.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                                <div class="flex items-start gap-2.5 text-sm">
+                                    <i data-lucide="check-square" class="text-gold-accent w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                    <div><strong>Ujian Mandiri Berbasis CBT:</strong> Evaluasi pembelajaran digital terstruktur.</div>
+                                </div>
+                                <div class="flex items-start gap-2.5 text-sm">
+                                    <i data-lucide="check-square" class="text-gold-accent w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                                    <div><strong>Rasio Kelas Efektif:</strong> Rasio guru pendamping berkisar 1:15 siswa.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5 bg-gold-light p-6 rounded-2xl text-center border border-gold-accent/20">
+                            <span class="text-xs font-bold text-gold-muted uppercase tracking-wider block">Ekstrakurikuler Pilihan</span>
+                            <div class="text-3xl font-bold text-emerald-deep font-serif-custom my-3">IT, Pidato & Seni Qur'an</div>
+                            <p class="text-xs text-gray-500">Mengembangkan kecakapan global yang berkarakter keagamaan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-karakter" class="tab-content hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <h3 class="text-xl font-serif-custom font-bold text-emerald-deep">Pendidikan Karakter & Buku Penghubung</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Pengawasan ketat untuk menciptakan ekosistem sekolah ramah anak bebas perundungan (bullying) digital maupun fisik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-soft px-3 py-1.5 rounded-md">School Ecosystem</span>
+                <h2 class="mt-4 text-3xl md:text-4xl font-serif-custom font-bold text-gray-900">Portal Layanan Academic Digital</h2>
+                <div class="w-16 h-1 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-600 text-sm">Akses cepat menuju aplikasi internal sekolah guna memfasilitasi ujian terpusat serta rekap kehadiran guru dan siswa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-emerald-deep text-gold-accent rounded-xl flex items-center justify-center">
+                            <i data-lucide="laptop" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">CBT Az-Zahro (Computer-Based Test)</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">Platform pelaksanaan ujian sekolah, penilaian harian, dan try-out secara online dengan sistem anti-copy yang aman bagi siswa.</p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="https://azzahrolocare.github.io/cbt/login.html" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-deep hover:text-emerald-medium bg-emerald-light/60 px-4 py-2.5 rounded-lg transition-colors">
+                            Buka Aplikasi CBT <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="w-12 h-12 bg-emerald-deep text-gold-accent rounded-xl flex items-center justify-center">
+                            <i data-lucide="check-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Sistem Presensi Digital Az-Zahro</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed">Portal pemantauan absensi kehadiran harian siswa dan dewan guru secara berkala, akurat, dan mendukung sinkronisasi data offline.</p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="https://azzahrolocare.github.io/rekapitulasi-presensi-siswa/" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white bg-emerald-deep hover:bg-emerald-medium px-4 py-2.5 rounded-lg transition-colors shadow-sm">
+                            Masuk Link Presensi <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-emerald-deep font-semibold text-sm tracking-wider uppercase bg-emerald-light px-3 py-1 inline-block">Hubungi Kami</span>
+                        <h2 class="mt-3 text-3xl font-serif-custom font-bold text-gray-900">Pintu Konsultasi Hubungan Lembaga</h2>
+                        <p class="mt-3 text-gray-600 text-sm leading-relaxed">Silakan menghubungi layanan humas kami atau mengisi formulir untuk seputar informasi PPDB, sinkronisasi nilai, dan administrasi sekolah.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-11 h-11 rounded-lg bg-emerald-soft text-emerald-deep flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 font-bold uppercase">Call Center Resmi</span>
+                                <span class="block text-sm text-gray-800 font-semibold">+62 812-3456-7890</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+                            <div class="w-11 h-11 rounded-lg bg-emerald-soft text-emerald-deep flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-gray-400 font-bold uppercase">E-mail Hubungan</span>
+                                <span class="block text-sm text-gray-800 font-semibold">smpi-azzahro@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-6 md:p-8 rounded-3xl border border-gray-100 shadow-xl space-y-4">
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-3 flex items-center gap-2">
+                        <i data-lucide="mail-open" class="text-gold-accent w-5 h-5"></i> Formulir Konsultasi Hubungan Sekolah
+                    </h3>
+                    <div id="contact-success-alert" class="hidden bg-emerald-soft border border-emerald-medium/30 p-4 rounded-xl text-emerald-deep text-sm flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 flex-shrink-0"></i>
+                        <span>Pesan berhasil dikirim! Tim IT / Sekretariat Hubungan Masyarakat akan segera memproses laporan Anda.</span>
+                    </div>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Nama Wali Murid / Pengunjung</label>
+                                <input type="text" required placeholder="Nama lengkap Anda" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">No. WhatsApp Aktif</label>
+                                <input type="tel" required placeholder="Contoh: 0812345678" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1.5">Pesan / Pertanyaan Anda</label>
+                            <textarea required rows="3" placeholder="Tulis rincian pesan atau pertanyaan seputar data hasil akademik ujian harian sekolah..." class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-emerald-deep focus:bg-white text-sm transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-emerald-deep hover:bg-emerald-medium text-white font-bold rounded-xl transition-colors shadow-md text-sm">
+                            Kirim Berkas Formulir Konsultasi
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-emerald-deep text-white border-t border-emerald-medium/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://azzahrolocare.github.io/presensi-smp-smk-azzahro/logo-smp-azzahro.png" alt="Logo SMP Az-Zahro" class="w-10 h-10 object-contain">
+                        <span class="text-md font-serif-custom font-bold tracking-wide">SMP ISLAM AZ-ZAHRO</span>
+                    </div>
+                    <p class="text-xs text-emerald-light/80 leading-relaxed max-w-sm">
+                        Lembaga pendidikan tingkat menengah pertama swasta yang berasaskan pada penanaman nilai islami, kemuliaan adab, serta kesiapan integrasi sistem digital modern.
+                    </p>
+                    <div class="flex space-x-3 text-gold-accent text-xs font-medium">
+                        <span>NPSN: 70024271</span>
+                        <span>•</span>
+                        <span>Dapodik Terintegrated</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold text-gold-accent uppercase tracking-wider">Menu Navigasi</h4>
+                    <ul class="space-y-2 text-xs text-emerald-light">
+                        <li><a href="#beranda" class="hover:text-white transition-colors">Halaman Utama</a></li>
+                        <li><a href="#tka" class="hover:text-white transition-colors">Hasil TKA 2026</a></li>
+                        <li><a href="#legalitas" class="hover:text-white transition-colors">Profil Legalitas</a></li>
+                        <li><a href="#layanan" class="hover:text-white transition-colors">Ekosistem Digital</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-bold text-gold-accent uppercase tracking-wider">Ketetapan Hukum Resmi</h4>
+                    <ul class="space-y-1.5 text-xs text-emerald-light/80">
+                        <li><strong>SK Pendirian:</strong> 421.3/1343/430.9.9/2023</li>
+                        <li><strong>SK Operasional:</strong> 503.421/649/PENDIK/430.9.13/2023</li>
+                        <li><strong>Yayasan Pengelola:</strong> Az-Zahro Islamic Foundation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-emerald-medium/20 text-center flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-light/60">
+                <p>&copy; 2026 SMP Islam Az-Zahro. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Kebijakan Privasi</a>
+                    <a href="#" class="hover:underline">Syarat Ketentuan</a>
+                    <a href="https://azzahrolocare.github.io/rekapitulasi-presensi-siswa/" target="_blank" class="hover:underline text-gold-accent font-medium">Link Presensi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // INIT SCRIPT UTAMA
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderKartuTka();
+        });
+
+        // RAW DATA PESERTA TKA
+        const dataSiswaTka = [
+            { nomor: "T2-26-05-31-1017-0005-4", nisn: "0109531186", nama: "ADITYA EKA SAPUTRA", ttl: "Bondowoso, 29 September 2010", mat: 30.00, matKet: "Kurang", indo: 40.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/hJG3RBrT/Adit.webp" },
+            { nomor: "T2-26-05-31-1017-0004-5", nisn: "0082114134", nama: "AHMAD HABIBI MAULANA", ttl: "Bondowoso, 28 April 2008", mat: 23.33, matKet: "Kurang", indo: 40.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/jkYGNmQJ/Habibi.webp" },
+            { nomor: "T2-26-05-31-1017-0003-3", nisn: "3113634149", nama: "ANDHIKA BAGUS RAMADHAN", ttl: "Bondowoso, 21 Agustus 2011", mat: 46.67, matKet: "Memadai", indo: 43.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/v6QVt7c0/Dika.webp" },
+            { nomor: "T2-26-05-31-1017-0016-9", nisn: "0127682320", nama: "ARIN HISFUALAH", ttl: "Bondowoso, 28 Mei 2012", mat: 26.67, matKet: "Kurang", indo: 33.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/jCyCfCS/Arin.webp" },
+            { nomor: "T2-26-05-31-1017-0023-2", nisn: "0112483701", nama: "AVITA HELMIYATIN", ttl: "Bondowoso, 19 Juni 2011", mat: 40.00, matKet: "Memadai", indo: 76.67, indoKet: "Baik", foto: "https://i.ibb.co.com/8nCkbQQw/Avita.webp" },
+            { nomor: "T2-26-05-31-1017-0013-4", nisn: "0124159506", nama: "DANDI", ttl: "Bondowoso, 1 Februari 2012", mat: 36.67, matKet: "Memadai", indo: 36.67, indoKet: "Kurang", foto: "https://i.ibb.co.com/Vp0wm0Py/Dandi.webp" },
+            { nomor: "T2-26-05-31-1017-0014-3", nisn: "0104776302", nama: "DEVITA MASURO", ttl: "Bondowoso, 5 Desember 2010", mat: 40.00, matKet: "Memadai", indo: 40.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/zhNKmkJ1/Devi.webp" },
+            { nomor: "T2-26-05-31-1017-0003-6", nisn: "0107204403", nama: "DIMAS ARIF MAULANA", ttl: "Bondowoso, 11 Desember 2010", mat: 23.33, matKet: "Kurang", indo: 46.67, indoKet: "Kurang", foto: "https://i.ibb.co.com/gLbDfYtV/Alan.webp" },
+            { nomor: "T2-26-05-31-1017-0001-8", nisn: "0102655649", nama: "FANIA RAHMAWATI", ttl: "Bondowoso, 2 Juli 2010", mat: 40.00, matKet: "Memadai", indo: 33.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/7tmcpcXL/Fania.webp" },
+            { nomor: "T2-26-05-31-1017-0002-7", nisn: "0101792722", nama: "KHOIRUL ANWAR", ttl: "Bondowoso, 7 November 2011", mat: 16.67, matKet: "Kurang", indo: 30.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/SXfgcfxn/Khoir.webp" },
+            { nomor: "T2-26-05-31-1017-0025-8", nisn: "0108990601", nama: "KIKI STIFANI", ttl: "Bondowoso, 14 Oktober 2010", mat: 33.33, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/Y7KfGTmJ/Kiki.webp" },
+            { nomor: "T2-26-05-31-1017-0007-2", nisn: "0114950342", nama: "LAILA NUR FILA SYAFA", ttl: "Bondowoso, 22 Mei 2011", mat: 40.00, matKet: "Memadai", indo: 60.00, indoKet: "Memadai", foto: "https://i.ibb.co.com/QgNvMcp/Fila.webp" },
+            { nomor: "T2-26-05-31-1017-0029-4", nisn: "0117508351", nama: "MOHAMMAD FATTHUNUR FAIZIN", ttl: "Bondowoso, 12 Juli 2011", mat: 46.67, matKet: "Memadai", indo: 56.67, indoKet: "Memadai", foto: "https://i.ibb.co.com/DDJ4Bpz6/Faiz.webp" },
+            { nomor: "T2-26-05-31-1017-0024-9", nisn: "0102633447", nama: "MOHAMMAD FERIANTO", ttl: "Bondowoso, 15 Februari 2010", mat: 43.33, matKet: "Memadai", indo: 43.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/PvKkNQ4D/Feri.webp" },
+            { nomor: "T2-26-05-31-1017-0027-6", nisn: "0094134364", nama: "MUHAMMAD ROIHAN", ttl: "Bondowoso, 11 Agustus 2009", mat: 36.67, matKet: "Memadai", indo: 33.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/7xMQs8fh/Roihan.webp" },
+            { nomor: "T2-26-05-31-1017-0018-7", nisn: "0081874393", nama: "MUKHLAS", ttl: "Bondowoso, 22 Desember 2008", mat: 33.33, matKet: "Memadai", indo: 43.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/4RCWQ1fP/Mukhlis.webp" },
+            { nomor: "T2-26-05-31-1017-0012-5", nisn: "0082165609", nama: "MUKHLIS", ttl: "Bondowoso, 22 Desember 2008", mat: 33.33, matKet: "Memadai", indo: 30.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/svXcqfw1/Muhklas.webp" },
+            { nomor: "T2-26-05-31-1017-0011-6", nisn: "0115851571", nama: "NASIVATUL BALGIS BAKHIRA", ttl: "Bondowoso, 4 Januari 2011", mat: 30.00, matKet: "Kurang", indo: 43.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/GwSZ4vC/Siva.webp" },
+            { nomor: "T2-26-05-31-1017-0026-7", nisn: "0103189776", nama: "NUR FADILAH ANGGRAINI", ttl: "Bondowoso, 20 Mei 2010", mat: 36.67, matKet: "Memadai", indo: 46.67, indoKet: "Kurang", foto: "https://i.ibb.co.com/HDzWqvF9/Dila.webp" },
+            { nomor: "T2-26-05-31-1017-0015-2", nisn: "0102533380", nama: "RIFZIKA DJAMILATUS SUBHAN", ttl: "Bondowoso, 17 Juni 2010", mat: 33.33, matKet: "Memadai", indo: 30.00, indoKet: "Kurang", foto: "https://i.ibb.co.com/tpVVmG6c/Rifzika.webp" },
+            { nomor: "T2-26-05-31-1017-0022-3", nisn: "3114305251", nama: "RINA KHOMARIYAH", ttl: "Bondowoso, 9 Desember 2011", mat: 46.67, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/93y11Gpv/Rina.webp" },
+            { nomor: "T2-26-05-31-1017-0017-8", nisn: "3118153763", nama: "RINI SAMSIYAH", ttl: "Bondowoso, 9 Desember 2011", mat: 36.67, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/qYH8XHqk/Rini.webp" },
+            { nomor: "T2-26-05-31-1017-0019-6", nisn: "3119713408", nama: "RISKA MAULIDIA", ttl: "Probolinggo, 8 Februari 2011", mat: 36.67, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/xSqG5WLk/Riska.webp" },
+            { nomor: "T2-26-05-31-1017-0010-7", nisn: "3115006209", nama: "SILVI IZZATUL MAULIDAH", ttl: "Bondowoso, 16 Juli 2011", mat: 40.00, matKet: "Memadai", indo: 66.67, indoKet: "Memadai", foto: "https://i.ibb.co.com/1tBnCJ9S/Silvi.webp" },
+            { nomor: "T2-26-05-31-1017-0028-5", nisn: "0104373040", nama: "SITTI LAINI", ttl: "Bondowoso, 21 Mei 2010", mat: 46.67, matKet: "Memadai", indo: 46.67, indoKet: "Kurang", foto: "https://i.ibb.co.com/Fcb6MPG/Laini.webp" },
+            { nomor: "T2-26-05-31-1017-0020-5", nisn: "0108117463", nama: "SOFIYA LATIFAH", ttl: "Bondowoso, 12 September 2010", mat: 50.00, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/1YRSrqrv/Latifah.webp" },
+            { nomor: "T2-26-05-31-1017-0009-8", nisn: "0107080615", nama: "TRY ANGGUN NUR FADILAH", ttl: "Bondowoso, 30 Desember 2010", mat: 33.33, matKet: "Memadai", indo: 53.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/3ysQpWrs/Anggun.webp" },
+            { nomor: "T2-26-05-31-1017-0006-3", nisn: "0116540904", nama: "UMMI SOFIA SA'ADA", ttl: "Bondowoso, 15 Januari 2011", mat: 36.67, matKet: "Memadai", indo: 73.33, indoKet: "Memadai", foto: "https://i.ibb.co.com/p6D6VR0q/Saada.webp" },
+            { nomor: "T2-26-05-31-1017-0021-4", nisn: "0104779685", nama: "WITA", ttl: "Bondowoso, 23 Juni 2010", mat: 33.33, matKet: "Memadai", indo: 46.67, indoKet: "Kurang", foto: "https://i.ibb.co.com/5WF7dVqp/Wita.webp" },
+            { nomor: "T2-26-05-31-1017-0008-9", nisn: "0102912322", nama: "YUSI YULIANA DEWI", ttl: "Bondowoso, 3 April 2010", mat: 36.67, matKet: "Memadai", indo: 43.33, indoKet: "Kurang", foto: "https://i.ibb.co.com/F4xwsMLf/Yuli.webp" }
+        ];
+
+        // RENDER KARTU PESERTA SECARA DINAMIS
+        function renderKartuTka(dataInput = dataSiswaTka) {
+            const container = document.getElementById('student-grid');
+            if(!container) return;
+            
+            container.innerHTML = '';
+
+            dataInput.forEach((siswa, index) => {
+                const totalNilai = (siswa.mat + siswa.indo).toFixed(2);
+                
+                const matBadgeColor = siswa.matKet === 'Baik' || siswa.matKet === 'Memadai' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+                const indoBadgeColor = siswa.indoKet === 'Baik' || siswa.indoKet === 'Memadai' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+
+                const cardHTML = `
+                    <div class="bg-white rounded-3xl shadow-md border-2 border-gray-200 p-5 flex flex-col justify-between hover:shadow-xl hover:border-emerald-medium/40 transition-all duration-300 relative overflow-hidden bg-[radial-gradient(#f3f4f6_1px,transparent_1px)] [background-size:16px_16px]">
+                        <div class="absolute -right-2 -bottom-4 text-7xl font-black text-gray-100/70 select-none pointer-events-none font-serif-custom">
+                            #${index + 1}
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between border-b pb-3 mb-4 border-dashed border-gray-200">
+                                <span class="text-[10px] bg-emerald-deep text-gold-accent px-2.5 py-0.5 font-bold rounded-full tracking-wide">PESERTA TKA</span>
+                                <span class="text-[10px] font-mono font-semibold text-gray-400">${siswa.nomor}</span>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <img src="${siswa.foto}" alt="${siswa.nama}" onerror="this.src='https://via.placeholder.com/150'" class="w-16 h-20 rounded-xl object-cover border-2 border-emerald-deep/20 shadow-sm bg-gray-50 flex-shrink-0">
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-tight leading-tight">${siswa.nama}</h3>
+                                    <p class="text-xs text-gray-500 mt-1 font-medium">NISN: ${siswa.nisn}</p>
+                                    <p class="text-[11px] text-gray-400 mt-0.5 truncate"><strong class="text-gray-600">TTL:</strong> ${siswa.ttl}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50/80 p-3 rounded-2xl border border-gray-200/60 my-4 space-y-2 relative z-10">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-600 font-medium">Matematika:</span>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-bold text-gray-900">${siswa.mat.toFixed(2)}</span>
+                                    <span class="px-2 py-0.5 rounded text-[9px] font-bold ${matBadgeColor}">${siswa.matKet}</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-600 font-medium">Bahasa Indonesia:</span>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="font-bold text-gray-900">${siswa.indo.toFixed(2)}</span>
+                                    <span class="px-2 py-0.5 rounded text-[9px] font-bold ${indoBadgeColor}">${siswa.indoKet}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-emerald-soft/60 border-2 border-emerald-medium/30 p-3 rounded-2xl text-center shadow-sm relative z-10">
+                            <div class="flex justify-between items-center">
+                                <span class="text-emerald-deep text-[10px] font-extrabold uppercase tracking-widest">Akumulasi Skor</span>
+                                <span class="text-emerald-medium text-xs font-bold font-mono">Total: ${totalNilai}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+            lucide.createIcons();
+        }
+
+        // FUNGSI URUTAN DATA (URUT SECARA REAL-TIME)
+        function urutkanDataTka() {
+            const kriteria = document.getElementById('sortOption').value;
+            let dataSorted = [...dataSiswaTka];
+
+            dataSorted.sort((a, b) => {
+                if (kriteria === 'keseluruhan') {
+                    let totalA = a.mat + a.indo;
+                    let totalB = b.mat + b.indo;
+                    if (totalB !== totalA) return totalB - totalA;
+                    return b.mat - a.mat;
+                } else if (kriteria === 'matematika') {
+                    if (b.mat !== a.mat) return b.mat - a.mat;
+                    return b.indo - a.indo;
+                } else if (kriteria === 'bahasa') {
+                    if (b.indo !== a.indo) return b.indo - a.indo;
+                    return b.mat - a.mat;
+                }
+                return 0;
+            });
+
+            renderKartuTka(dataSorted);
+        }
+
+        // CONTROL NAV & HERO SLIDER
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) { mobileMenu.classList.add('hidden'); mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>'; } 
+            else { mobileMenu.classList.remove('hidden'); mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>'; }
+            lucide.createIcons();
+        });
+
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) { slide.classList.remove('opacity-0'); slide.classList.add('opacity-100'); } 
+                else { slide.classList.remove('opacity-100'); slide.classList.add('opacity-0'); }
+            });
+        }
+        function nextSlide() { currentSlideIndex = (currentSlideIndex + 1) % slides.length; showSlide(currentSlideIndex); }
+        function prevSlide() { currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length; showSlide(currentSlideIndex); }
+        setInterval(nextSlide, 6000);
+
+        function switchTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => { content.classList.add('hidden'); content.classList.remove('block'); });
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-deep', 'text-white', 'shadow-md');
+                btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+            });
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            document.getElementById(`content-${tabName}`).classList.add('block');
+            document.getElementById(`btn-${tabName}`).className += ' bg-emerald-deep text-white shadow-md';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const alertBox = document.getElementById('contact-success-alert');
+            alertBox.classList.remove('hidden');
+            form.reset();
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => { alertBox.classList.add('hidden'); }, 8000);
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) { nav.classList.add('py-1', 'shadow-lg'); } else { nav.classList.remove('py-1', 'shadow-lg'); }
+        });
+    </script>
+</body>
+</html>
